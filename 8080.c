@@ -4,6 +4,7 @@
 typedef struct {
     uint16_t *stack_pointer;
     uint16_t program_counter;
+    uint8_t *memory;
 
     // Registers
     uint8_t A;
@@ -15,11 +16,12 @@ typedef struct {
     uint8_t L;
 
     // Flags
-    uint8_t S;  // Sign
-    uint8_t Z;  // Zero
-    uint8_t P;  // Parity
-    uint8_t C;  // Carry
-    uint8_t AC; // Auxiliary Carry
+    uint8_t S:1;       // Sign
+    uint8_t Z:1;       // Zero
+    uint8_t P:1;       // Parity
+    uint8_t CY:1;      // Carry
+    uint8_t AC:1;      // Auxiliary Carry
+    uint8_t padding:3; // Padding (to complete 8 bits)
 } cpu;
 
 
