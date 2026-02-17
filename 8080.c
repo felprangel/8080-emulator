@@ -11,7 +11,7 @@ typedef struct {
 } Flags;
 
 typedef struct {
-    uint16_t *stack_pointer;
+    uint16_t stack_pointer;
     uint16_t program_counter;
     uint8_t *memory;
 
