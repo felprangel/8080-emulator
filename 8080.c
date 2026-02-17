@@ -13,7 +13,7 @@ typedef struct {
 typedef struct {
     uint16_t stack_pointer;
     uint16_t program_counter;
-    uint8_t *memory[0x10000];
+    uint8_t memory[0x10000];
 
     // Registers
     uint8_t B; // Most significant
