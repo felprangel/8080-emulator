@@ -16,14 +16,14 @@ typedef struct {
     uint8_t *memory[0x10000];
 
     // Registers
-    uint8_t A;
-    uint8_t B;
-    uint8_t C;
-    uint8_t D;
-    uint8_t E;
+    uint8_t B; // Most significant
+    uint8_t C; // Least significant
+    uint8_t D; // Most significant
+    uint8_t E; // Least significant
+    uint8_t H; // Most significant
+    uint8_t L; // Least significant
     Flags F;
-    uint8_t H;
-    uint8_t L;
+    uint8_t A;
 } cpu;
 
 
