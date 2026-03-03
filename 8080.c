@@ -30,3 +30,45 @@ typedef struct {
 int main() {
     return 0;
 }
+
+void unimplementedInstruction() {
+    printf ("Error: Unimplemented instruction\n");
+    exit(1);
+}
+
+int emulateInstruction(cpu* cpu) {
+    unsigned char *opcode = &cpu->memory[cpu->program_counter];
+
+    switch(*opcode)
+    {
+        case 0x00:
+            break;
+
+        case 0x01:
+            unimplementedInstruction();
+            break;
+
+        case 0x02:
+            unimplementedInstruction();
+            break;
+
+        case 0x03:
+            unimplementedInstruction();
+            break;
+
+        case 0x04:
+            unimplementedInstruction();
+            break;
+
+        /*....*/
+        case 0xfe:
+            unimplementedInstruction();
+            break;
+
+        case 0xff:
+            unimplementedInstruction();
+            break;
+    }
+
+    cpu->program_counter++;
+}
